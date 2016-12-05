@@ -1,0 +1,9 @@
+{
+  "name": "kmpublic-download",
+  "version": "1.0.0",
+  "description": "Download files from KMPublic site",
+  "main": "index.js",
+  "repository": "zhusee2/kmpublic-download",
+  "author": "Teng-hao Chang <zhusee2@gmail.com>",
+  "license": "MIT"
+}
