@@ -5,5 +5,9 @@
   "main": "index.js",
   "repository": "zhusee2/kmpublic-download",
   "author": "Teng-hao Chang <zhusee2@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0"
+  }
 }
