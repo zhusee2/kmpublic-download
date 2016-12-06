@@ -2,6 +2,8 @@ const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
 
+const CategoryDownloader = require('./lib/category_downloader');
+
 const DL_DIR = 'downloads';
 
 const ENDPOINT = 'http://117.56.91.94/KMPublic/searchresult/searchservice.aspx'
@@ -35,16 +37,6 @@ function readDocumentByKey(docKey, docTitle) {
   });
 }
 
-// Get category list
-request({ url: ENDPOINT, jar: true }, (err, response, body) => {
-  if (response.statusCode === 200) {
-    const result = JSON.parse(body);
-    const records = result.Data[0];
-
-    // Get array of records
-    records.forEach((document) => {
-      const { UniqueKey, Title } = document;
-      readDocumentByKey(UniqueKey, Title);
-    });
-  }
-});
+const downloader = new CategoryDownloader(985);
+downloader.retrieveAllRecords({ pageSize: 100 })
+  .then(store => console.log(store.getStore()[0]));
