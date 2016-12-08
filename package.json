@@ -2,10 +2,13 @@
   "name": "kmpublic-download",
   "version": "1.0.0",
   "description": "Download files from KMPublic site",
-  "main": "index.js",
   "repository": "zhusee2/kmpublic-download",
   "author": "Teng-hao Chang <zhusee2@gmail.com>",
   "license": "MIT",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 6.8.1"
+  },
   "dependencies": {
     "cheerio": "^0.22.0",
     "request": "^2.79.0"
